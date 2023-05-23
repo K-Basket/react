@@ -1,11 +1,7 @@
-import { ToggleContext } from './Context';
-import { useContext } from 'react';
+import { useGetContext } from './Context';
 
 export function Alert() {
-  // useContext получает данные из createContext() (App.jsx)
-  const result = useContext(ToggleContext);
-
-  console.log('result :>> ', result); // {toggleValue: false, setToggleFn: ƒ}
+  const result = useGetContext();
 
   return result.toggleValue && <p>message</p>;
 }

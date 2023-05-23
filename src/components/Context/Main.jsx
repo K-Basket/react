@@ -1,13 +1,11 @@
-import { ToggleContext } from './Context';
-import { useContext } from 'react';
+import { useGetContext } from './Context';
 
 export function Main() {
-  const result = useContext(ToggleContext);
+  const result = useGetContext();
 
   return (
-    // кнопка "Open Alert" запускает функцию пропса ToggleContext
     <div>
-      <h1>Hook useContext</h1>
+      <h1>Hook: useContext</h1>
 
       <button onClick={result.setToggleFn} type="button">
         Open Alert

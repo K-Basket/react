@@ -1,10 +1,10 @@
 import React from 'react';
-import { Context } from './Context/Context';
+import { ContextApp } from './Context/ContextApp';
 
 export function App() {
   return (
     <div>
-      <Context />
+      <ContextApp />
     </div>
   );
 }
