@@ -1,4 +1,4 @@
-import { ToggleContext } from 'components/App';
+import { ToggleContext } from './Context';
 import { useContext } from 'react';
 
 export function Alert() {
