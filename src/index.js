@@ -6,8 +6,10 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/react">
       <App />
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// basename="/react" - передается для GitHub
