@@ -3,7 +3,7 @@ const Home = () => {
   //   // HTTP запрос реализуется здесь
   // }, [])
 
-  return <div>Home page</div>;
+  return <h3>Home page</h3>;
 };
 
 export default Home;
