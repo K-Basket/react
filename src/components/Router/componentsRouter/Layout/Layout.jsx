@@ -7,8 +7,8 @@ const Layout = () => {
       <Header>
         <nav>
           <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink to="about">About</StyledNavLink>
-          <StyledNavLink to="products">Products</StyledNavLink>
+          <StyledNavLink to="/about">About</StyledNavLink>
+          <StyledNavLink to="/products">Products</StyledNavLink>
         </nav>
       </Header>
 
@@ -16,7 +16,9 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer>footer</footer>
+      <footer>
+        <h3>footer</h3>
+      </footer>
     </>
   );
 };
