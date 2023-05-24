@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Collections from './pages/Collections';
+// import Collections from './pages/Collections';
 import CollectionElement from './pages/CollectionElement';
 import Layout from './componentsRouter/Layout/Layout';
 import { Gallery } from './componentsRouter/Gallery';
@@ -15,7 +15,6 @@ export function RouterApp() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="about" element={<Collections />} />
           <Route path="dogs/:dogId" element={<CollectionElement />}>
             <Route path="subbreeds" element={<SubBreeds />} />
             <Route path="gallery" element={<Gallery />} />
