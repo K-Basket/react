@@ -4,11 +4,9 @@ import { Context } from './Context';
 
 export function ContextApp() {
   return (
-    <div>
-      <Context>
-        <Main />
-        <Alert />
-      </Context>
-    </div>
+    <Context>
+      <Main />
+      <Alert />
+    </Context>
   );
 }

@@ -8,15 +8,17 @@ import { SubBreeds } from './SubBreeds';
 
 export function RouterApp() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="dogs" element={<Collections />} />
-        <Route path="dogs/:dogId" element={<CollectionElement />}>
-          <Route path="subbreeds" element={<SubBreeds />} />
-          <Route path="gallery" element={<Gallery />} />
+    <section>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="dogs" element={<Collections />} />
+          <Route path="dogs/:dogId" element={<CollectionElement />}>
+            <Route path="subbreeds" element={<SubBreeds />} />
+            <Route path="gallery" element={<Gallery />} />
+          </Route>
         </Route>
-      </Route>
-    </Routes>
+      </Routes>
+    </section>
   );
 }
