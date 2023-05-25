@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Header, StyledNavLink } from './LayoutStyled';
+import { Suspense } from 'react';
 
 const Layout = () => {
   return (
@@ -13,7 +14,9 @@ const Layout = () => {
       </Header>
 
       <main>
-        <Outlet />
+        <Suspense fallback={<div>loading...</div>}>
+          <Outlet />
+        </Suspense>
       </main>
 
       <footer>
@@ -24,3 +27,10 @@ const Layout = () => {
 };
 
 export default Layout;
+
+/*
+Оборачиваем в Suspense для разделения кода.
+<Suspense fallback={<div>Loading...</div>}>
+  <Outlet />
+</Suspense>
+*/

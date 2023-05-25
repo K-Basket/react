@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
@@ -39,7 +39,9 @@ const ProductDetails = () => {
           <Link to="delivery">Delivery terms</Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<div>loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
@@ -60,6 +62,13 @@ location.state?.from -- если location.state будет false, тогда в�
 /*
 <Link to={location.state?.from ?? '/products'}>Back to Products</Link> 
 Эта проверка нужна для того, если пользователь перейдет на новую страницу по линку находясь
-на странице ProductDedails, при нажатии на кноппку "Back to Products" он вернулся по ссылке 
+на странице ProductDedails, при нажатии на кнопку "Back to Products" он вернулся по ссылке 
 "/products", в противном случае слетит вся страница.
+*/
+
+/*
+Оборачиваем в Suspense для разделения кода.
+<Suspense fallback={<div>Loading...</div>}>
+  <Outlet />
+</Suspense>
 */

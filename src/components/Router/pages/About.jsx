@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 const About = () => {
@@ -28,9 +29,18 @@ const About = () => {
           <Link to="future">Read about our future</Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<div>loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
 
 export default About;
+
+/*
+Оборачиваем в Suspense для разделения кода.
+<Suspense fallback={<div>Loading...</div>}>
+  <Outlet />
+</Suspense>
+*/

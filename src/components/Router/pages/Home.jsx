@@ -7,5 +7,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// видео 00:34:00

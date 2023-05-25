@@ -1,4 +1,4 @@
-import ProductsList from './ProductsList/ProductsList';
+import ProductsList from '../ProductsList/ProductsList';
 
 const products = [
   { id: '1', name: 'Banana', color: 'red' },
