@@ -1,5 +1,5 @@
 // import { Link } from 'react-router-dom';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { Container, LinkStyled } from './ProductsListStyled';
 
 const ProductsList = ({ products }) => {
@@ -7,14 +7,20 @@ const ProductsList = ({ products }) => {
   //   // HTTP запрос реализуется здесь
   // }, [])
 
+  const location = useLocation(); // возвращает объект местоположения
   const [searchParams, setSearchParams] = useSearchParams();
-  const params = searchParams.get('params') ?? ''; // читает строку запроса
-  const filteredProducts = products.filter(el => el.name.includes(params));
+  const params = (searchParams.get('params') ?? '').toLowerCase(); // читает строку запроса
+  // const normalizeParams = params.toLowerCase();
+  const filteredProducts = products.filter(el =>
+    el.name.toLowerCase().includes(params)
+  );
 
   const updateQueryString = evt => {
     if (evt.target.value === '') setSearchParams({});
     setSearchParams({ params: evt.target.value });
   };
+
+  // console.log('location ProductList :>> ', location);
 
   return (
     <>
@@ -30,7 +36,11 @@ const ProductsList = ({ products }) => {
       <h3>Products List:</h3>
       <Container>
         {filteredProducts.map(product => (
-          <LinkStyled key={product.id} to={`${product.id}`}>
+          <LinkStyled
+            key={product.id}
+            to={`${product.id}`}
+            state={{ from: location }} // передаем объект местоположения
+          >
             <p>{product.name}</p>
           </LinkStyled>
         ))}
