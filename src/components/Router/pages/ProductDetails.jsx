@@ -1,8 +1,10 @@
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useRef } from 'react';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
   const location = useLocation(); // сюда прилетает местоположение (location) страницы ProductsList в state текущего location, далее мы передаем это в <Link to={location.state.from}>Back to Products</Link> (см.ниже)
   const { productsId } = useParams(); // useParams() возвращает объект со всеми динамическими параметрами которые есть в текущем URL
+  const backLinkLocationRef = useRef(location.state?.from ?? '/products'); // тк useRef запиисывает в себя инфу только на стадии монтирования, запишем сюда локацию для линка возврата на предыдущую страницу
   // const params = useParams();
   // console.log('params :>> ', params);
 
@@ -16,7 +18,8 @@ const ProductDetails = () => {
     <>
       <h2>Product details {productsId}</h2>
 
-      <Link to={location.state?.from ?? '/products'}>Back to Products</Link>
+      <Link to={backLinkLocationRef.current}>Back to Products</Link>
+      {/* <Link to={location.state?.from ?? '/products'}>Back to Products</Link> */}
       <p>any image here</p>
       {/* <img src="https://via.placeholder.com/960x240" alt="" /> */}
       <p>
@@ -27,6 +30,16 @@ const ProductDetails = () => {
         Impedit suscipit quisquam incidunt commodi fugiat aliquam praesentium
         ipsum quos unde voluptatum?
       </p>
+
+      <ul>
+        <li>
+          <Link to="description">Product description</Link>
+        </li>
+        <li>
+          <Link to="delivery">Delivery terms</Link>
+        </li>
+      </ul>
+      <Outlet />
     </>
   );
 };

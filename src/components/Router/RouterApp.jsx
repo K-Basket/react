@@ -23,7 +23,10 @@ export function RouterApp() {
           </Route>
 
           <Route path="products" element={<Products />} />
-          <Route path="products/:productsId" element={<ProductDetails />} />
+          <Route path="products/:productsId" element={<ProductDetails />}>
+            <Route path="description" element={<h4>Product description</h4>} />
+            <Route path="delivery" element={<h4>Delivery terms</h4>} />
+          </Route>
 
           <Route path="*" element={<NotFound />} />
         </Route>

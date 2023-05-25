@@ -10,7 +10,7 @@ export function App() {
         <ContextApp />
       </Section>
 
-      <Section title={'Маршрутизация'}>
+      <Section title={'Маршрутизация 00:38:48'}>
         <RouterApp />
       </Section>
     </div>
