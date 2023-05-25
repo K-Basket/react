@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/965.ccb577ce.chunk.js","mappings":"sHAQA,UARa,WAKX,OAAO,wBAAI,aACZ,C","sources":["components/Router/pages/Home.jsx"],"sourcesContent":["const Home = () => {\n  // useEffect(() => {\n  //   // HTTP запрос реализуется здесь\n  // }, [])\n\n  return <h3>Home page</h3>;\n};\n\nexport default Home;\n"],"names":[],"sourceRoot":""}
