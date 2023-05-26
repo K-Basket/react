@@ -1,4 +1,3 @@
-// для разделения кода нужны динамические импорты, и обязательно экспорты длжны быть дефолтными.
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 import Layout from './componentsRouter/Layout/Layout';
@@ -16,6 +15,7 @@ import Layout from './componentsRouter/Layout/Layout';
 // import Delivery from './componentsRouter/Delivery/Delivery';
 
 // Динамический импорт
+// для разделения кода нужны динамические импорты, и обязательно экспорты длжны быть дефолтными.
 const Home = lazy(() => import('./pages/Home'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const About = lazy(() => import('./pages/About'));
