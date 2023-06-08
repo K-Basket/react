@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact=self.webpackChunkreact||[]).push([[845],{2580:function(e,t,a){a.r(t);var s=a(184);t.default=function(){return(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)("h4",{children:"The future of our company"}),(0,s.jsx)("p",{children:"Nulla at volutpat diam ut venenatis. Massa sed elementum tempus egestas. Enim blandit volutpat maecenas volutpat. Eget gravida cum sociis natoque penatibus et magnis dis. Odio pellentesque diam volutpat commodo sed egestas egestas."})]})}}}]);
+//# sourceMappingURL=845.47900bec.chunk.js.map

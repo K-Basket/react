@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact=self.webpackChunkreact||[]).push([[580],{230:function(i,e,t){t.r(e);var u=t(184);e.default=function(){return(0,u.jsxs)(u.Fragment,{children:[(0,u.jsx)("h4",{children:"Product description"})," ",(0,u.jsx)("p",{children:"Deleniti optio quasi, amet natus reiciendis atque fuga dolore? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit suscipit quisquam incidunt commodi fugiat aliquam praesentium ipsum quos unde voluptatum"})]})}}}]);
-//# sourceMappingURL=580.279ce408.chunk.js.map
