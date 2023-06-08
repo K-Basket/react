@@ -1,10 +1,19 @@
-import { createStore } from 'redux';
+// ========================= Ниже код Redux ToolKit  ====================== //
+
+import { configureStore } from '@reduxjs/toolkit';
+// import { reducer as rootReducer } from './reducer';
+// или то же самое
 import { reducer } from './reducer';
 
-// здесь store имеет сколько угодно свойств в объекте
-export const store = createStore(reducer);
+export const store = configureStore({ reducer });
 
-// store.dispatch({ type: 'increment', payload: 12 });
+// ========================= Ниже код чистый Redux ====================== //
+
+// import { createStore } from 'redux';
+// import { reducer } from './reducer';
+// import { configureStore } from '@reduxjs/toolkit';
+
+// export const store = createStore(reducer);
 
 // ========================= Ниже код без разделения на папки ====================== //
 

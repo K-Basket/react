@@ -4,6 +4,7 @@ import {
   decrementAction,
   incrementAction,
 } from 'components/Redux/store/counter/actions';
+// import { createAction } from '@reduxjs/toolkit';
 
 export const Counter = () => {
   // useSelector() возвращает значения state из store
@@ -15,6 +16,7 @@ export const Counter = () => {
   const handleClickIncrement = () => {
     dispatch(incrementAction(step));
   };
+
   const handleClickDecrement = () => {
     dispatch(decrementAction(step));
   };

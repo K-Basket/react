@@ -8,8 +8,8 @@ const Step = () => {
     evt.preventDefault();
     // забираем значение value из input/form
     const { value } = evt.target.elements.step;
-    // оправляем dispatch со значением value в store/reducer который обновить redux/state
-    dispatch(setStepAction(value));
+    // оправляем dispatch со значением value в store/reducer который обновит redux/state
+    dispatch(setStepAction(Number(value)));
   };
 
   return (
