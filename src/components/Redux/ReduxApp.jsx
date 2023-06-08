@@ -1,3 +1,9 @@
-export function Redux() {
-  return <div>Redux App</div>;
+import { Counter } from './componentsRedux/Counter/Counter';
+
+export function ReduxApp() {
+  return (
+    <div>
+      <Counter />
+    </div>
+  );
 }
