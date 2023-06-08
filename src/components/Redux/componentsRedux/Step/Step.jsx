@@ -1,3 +1,4 @@
+import { setStepAction } from 'components/Redux/store/counter/actions';
 import { useDispatch } from 'react-redux';
 
 const Step = () => {
@@ -8,7 +9,7 @@ const Step = () => {
     // забираем значение value из input/form
     const { value } = evt.target.elements.step;
     // оправляем dispatch со значением value в store/reducer который обновить redux/state
-    dispatch({ type: 'setStep', payload: Number(value) });
+    dispatch(setStepAction(value));
   };
 
   return (
