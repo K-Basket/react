@@ -1,4 +1,5 @@
-import { setStepAction } from 'components/Redux/store/counter/actions';
+// import { setStepAction } from 'components/Redux/store/counter/actions';
+import { setStepAction } from 'components/Redux/store/counter/counterSlice';
 import { useDispatch } from 'react-redux';
 
 const Step = () => {

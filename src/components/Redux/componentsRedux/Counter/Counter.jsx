@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Step from '../Step/Step';
+// import { decrementAction } from 'components/Redux/store/counter/actions';
 import {
   decrementAction,
   incrementAction,
-} from 'components/Redux/store/counter/actions';
+} from 'components/Redux/store/counter/counterSlice';
 // import { createAction } from '@reduxjs/toolkit';
 
 export const Counter = () => {

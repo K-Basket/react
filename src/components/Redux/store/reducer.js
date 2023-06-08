@@ -1,9 +1,10 @@
 // ========================= Ниже код Redux ToolKit  ====================== //
 
-// Разбиваем логикуу reducer на несколько функций
+// Разбиваем логику reducer на несколько функций
 
+import { counterReducer } from './counter/counterSlice';
 import { todoReducer } from './todo/todoReducer';
-import { counterReducer } from './counter/counterReducer';
+// import { counterReducer } from './counter/counterReducer';
 
 // для экспорта объединяем reducer с помошью комбайна
 // объединяет сколько угодно reducer-ов в один объект
