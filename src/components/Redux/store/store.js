@@ -4,7 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 // import { reducer as rootReducer } from './reducer';
 // или то же самое
 import { reducer } from './reducer';
-
+// configureStore обязательно принимает щбъект
 export const store = configureStore({ reducer });
 
 // ========================= Ниже код чистый Redux ====================== //

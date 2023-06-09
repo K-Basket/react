@@ -5,11 +5,15 @@ import {
   decrementAction,
   incrementAction,
 } from 'components/Redux/store/counter/counterSlice';
+import { counterSelector } from 'components/Redux/store/counter/selectors';
 // import { createAction } from '@reduxjs/toolkit';
+
+// const counterSelector = state => state.counter;
 
 export const Counter = () => {
   // useSelector() возвращает значения state из store
-  const { total, step } = useSelector(state => state.counter);
+  // для того, чтобы мемоизовать обращение к state при каждом рендере - вынесем внутренность useselector в отдельную функцию.
+  const { total, step } = useSelector(counterSelector);
 
   // hook useDispatch() возвращает метод Dispatch (action)
   const dispatch = useDispatch();

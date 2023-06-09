@@ -13,7 +13,8 @@ export const counterReducer = createReducer(initialState, {
     ...state,
     total: state.total - action.payload,
   }),
-  [setStepAction]: (state, action) => ({ ...state, step: action.payload }),
+  // можно, как вариант, детсруктуриизировать payload
+  [setStepAction]: (state, { payload }) => ({ ...state, step: payload }),
 });
 
 // export const counterReducer = (state = initialState, action) => {
