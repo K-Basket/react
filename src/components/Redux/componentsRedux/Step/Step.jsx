@@ -1,5 +1,5 @@
 // import { setStepAction } from 'components/Redux/store/counter/actions';
-import { setStepAction } from 'components/Redux/store/counter/counterSlice';
+import { setStep } from 'components/Redux/store/counter/counterSlice';
 import { useDispatch } from 'react-redux';
 
 const Step = () => {
@@ -10,7 +10,7 @@ const Step = () => {
     // забираем значение value из input/form
     const { value } = evt.target.elements.step;
     // оправляем dispatch со значением value в store/reducer который обновит redux/state
-    dispatch(setStepAction(Number(value)));
+    dispatch(setStep(Number(value)));
   };
 
   return (

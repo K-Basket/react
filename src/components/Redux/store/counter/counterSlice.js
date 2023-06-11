@@ -1,23 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { initialState } from './initialState';
+// import { initialState } from './initialState';
+
+const initialState = {
+  total: 0,
+  step: 1,
+};
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: 'counter', // общее название, используется для работы с Counter
   initialState: initialState,
   reducers: {
-    incrementAction: (state, action) => {
+    increment: (state, action) => {
       state.total += action.payload;
     },
-    decrementAction: (state, action) => {
+    decrement: (state, action) => {
       state.total -= action.payload;
     },
-    setStepAction: (state, action) => {
-      state.step = action.payload;
+    setStep: (state, { payload }) => {
+      state.step = payload; // здесь для примера деструктуризацияя payload
     },
   },
 });
 
-export const counterReducer = counterSlice.reducer;
+export const counterReducer = counterSlice.reducer; // передаем counterReduser в главный reduser
 
-export const { incrementAction, decrementAction, setStepAction } =
-  counterSlice.actions;
+export const { increment, decrement, setStep } = counterSlice.actions; // экспортируем экшены для использования их в компонентах

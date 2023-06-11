@@ -3,9 +3,9 @@
 import { createAction } from '@reduxjs/toolkit';
 // import { DECREMENT, INCREMENT, SETSTEP } from './types';
 
-export const decrementAction = createAction('DECREMENT');
-export const incrementAction = createAction('INCREMENT');
-export const setStepAction = createAction('SETSTEP');
+export const decrementAction = createAction('counter/decrement');
+export const incrementAction = createAction('conter/increment');
+export const setStepAction = createAction('counter/setstep');
 
 // export function decrementAction(value) {
 //   return { type: DECREMENT, payload: value };
