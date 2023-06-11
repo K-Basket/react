@@ -1,11 +1,41 @@
 // ========================= Ниже код Redux ToolKit  ====================== //
 
 import { configureStore } from '@reduxjs/toolkit';
-// import { reducer as rootReducer } from './reducer';
-// или то же самое
 import { reducer } from './reducer';
-// configureStore обязательно принимает щбъект
-export const store = configureStore({ reducer });
+
+import {
+  persistReducer,
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+
+const persistConfig = {
+  key: 'todo',
+  storage,
+  blacklist: ['todo'],
+};
+
+const persistedReducer = persistReducer(persistConfig, reducer);
+
+// configureStore обязательно принимает объект
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
+
+// весь state будет записываться в LocalStorrage
+export const persistor = persistStore(store);
 
 // ========================= Ниже код чистый Redux ====================== //
 
